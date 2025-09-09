@@ -1,0 +1,49 @@
+﻿Program oblicza współczynniki macierzy kowariancji na podstawie danych zaczytanych z pliku w formacie nazwa_pliku.xlsx. Dane w wejściowym pliku Excel muszą spełniać następujące warunki:
+Wiersz 0: dowolny.
+Wiersz 1: wiersz nagłówkowy, zawierający nazwy kolumn tabeli, każda nazwa w osobnej kolumnie (patrz plik_testowy.xlsx : ‘rok’ , ‘Opcja 1’, ‘Opcja 2’, ‘Opcja 3’, ‘Opcja 4’ ).
+Kolumna A zawiera liczby porządkowe: dowolne liczby naturalne w kolejności rosnącej ( patrz plik_testowy.xlsx : liczby z przedziału 1800 – 1832).
+Pozostałe kolumny zawierają dowolne liczby zmiennoprzecinkowe (część dziesiętną od całkowitej oddziela przecinek).
+Dołączone do projektu pliki : plik_testowy.xlsx i indeksy_projekt.xlsx stanowią przykłady plików o poprawnej strukturze i mogą zostać użyte do testowania działania programu. 
+W oknie podpisanym „Krok 1” należy wybrać ścieżkę do wyżej opisanego pliku, zatwierdzić wybór klikając „Zatwierdź wybór”. Dopiero wtedy można przejść dalej.
+W oknie „Krok 2” należy wybrać z listy przynajmniej jedną opcję, odpowiadającą nazwie kolumny z danymi, która zostanie użyta w liczeniu macierzy kowariancji. Następnie trzeba zatwierdzić wybór i przejść dalej.
+W oknie „Krok 3”  należy wpisać wartości „ od” i „do” liczb porządkowych, odpowiadających zakresowi wierszy tabeli, z którego dane zostaną użyte. 
+Po zatwierdzeniu wyboru pokaże się graficzna wizualizacja macierzy kowariancji, macierz wyświetli się w terminalu i w oknie widocznym po zamknięciu mapy ciepła.
+Na etapach „Krok 2” i „Krok 3” można wrócić do poprzedniego okna, klikając odpowiedni przycisk.
+Opis działania poszczególnych funkcji jest zawarty w kodzie w formie docstringów.
+Uruchomienie programu z wybranym plikiem indeksy_projekt.xlsx wygeneruje macierz kowariancji dla prawdziwych wartości stóp zwrotów z inwestycji w akcje spółek wchodzących w skład wybranych indeksów giełdowych. 
+##########################################
+Dodatkowe moduły konieczne do działania programu:
+matplotlib==3.8.4
+openpyxl==3.1.2
+pandas==2.2.2
+seaborn==0.13.2
+tkinter
+##########################################
+Podział pracy przy projekcie:
+Wiktoria Papiz: funkcje: 
+• display_covariance_matrix(matrix), 
+• save_years(entry_year_from, entry_year_to),
+• validate_year_range(year_from, year_to, df) wraz z sekcją testową (validate_year_module.py)
+• next(root), 
+• open_third_win(root)
+• save_file_path(entry_file_path)
+• main()
+• Quit
+Przygotowanie pliku requirements i HOW_TO.TXT
+##########################################
+Piotr Otręba: funkcje: 
+• cov_matrix(input_file, year_range, index_names,df) wraz z sekcją testową (cov_matrix_module.py)
+• open_first_win(root), 
+• open_sec_win(root), 
+• go_back(root), 
+• save_index_list(lb), 
+• browse_files(entry_file_path)
+• click_fun(wn,_ml)
+• About()
+Znalezienie odpowiednich danych wartości różnych indeksów giełdowych oraz przedstawienie ich w tabeli excel.
+
+
+
+
+
+ 
